@@ -10,20 +10,19 @@
 
     <h3>Comments</h3>
     <hr>
-    <form action="POST">
-        <div class="row">
-            <div class="col-3">
+    <form action="" method="POST">
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="name" class="form-control" id="name" aria-describedby="name" placeholder="Enter Name">
                 </div>
-            </div>
-            <div class="col">
-                <label for="name">Comment</label>
-                <textarea name="comment" id="" cols="90" rows="3" class="form-control"></textarea>
-            </div>
-        </div>
+                <div class="form-group">
+                    <label for="name">Comment</label>
+                    <textarea name="comment" id="" cols="90" rows="3" class="form-control"></textarea>
+                </div>
+                <input class="btn btn-primary" type="submit" value="Submit Your Comment">
     </form>
+    <br>
+    <hr>
     @foreach ($comments as $comment)
     <div class="card p-3 m-3">
         <div class="row">
