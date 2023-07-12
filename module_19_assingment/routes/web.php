@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CommentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 
@@ -16,4 +17,4 @@ use App\Http\Controllers\PostController;
 
 Route::get('/', [PostController::class, 'get_posts']);
 Route::get('/post_details/{id}', [PostController::class, 'posts']);
-Route::post('/comment', );
+Route::post('/add_comment', [CommentController::class, 'add_comment'])->name('add_comment');

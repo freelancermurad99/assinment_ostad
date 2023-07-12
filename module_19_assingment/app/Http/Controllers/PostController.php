@@ -14,8 +14,8 @@ class PostController extends Controller
     }
 
     function posts(Request $request){
-        $data['posts'] = Post::where('id',$request->id)->get();
-        $data['comments'] = Comment::where('post_id',$request->id)->get();
+        $data['post'] = Post::where('id',$request->id)->first();
+        $data['comments'] = Comment::where('post_id',$request->id)->orderby('id', 'desc')->get();
         return view('post_details', $data);
     }
 }
