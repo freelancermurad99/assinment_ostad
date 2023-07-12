@@ -10,4 +10,17 @@
 
     <h3>Comments</h3>
     <hr>
+    
+    @foreach ($comments as $comment)
+    <div class="card p-3 m-3">
+        <div class="row">
+            <div class="col">
+                <div class="card-body">
+                    <h5 class="card-title text-primary">{{$comment->name}}</h5>
+                    <p class="card-text">{{$comment->comments}}</p>
+                </div>
+            </div>
+        </div>
+      </div>
+    @endforeach
 @endsection
