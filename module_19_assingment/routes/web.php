@@ -16,3 +16,4 @@ use App\Http\Controllers\PostController;
 
 Route::get('/', [PostController::class, 'get_posts']);
 Route::get('/post_details/{id}', [PostController::class, 'posts']);
+Route::post('/comment', );
