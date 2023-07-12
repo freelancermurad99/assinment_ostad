@@ -15,9 +15,9 @@ class CommentController extends Controller
                 'comments' => $request->comment
             ]);
 
-            return back()->with('message');
+            return back()->with('message', 'Comment Added');
         } catch (\Throwable $th) {
-            
+            return back()->with('message', 'Something is wrong');
         }
     }
 }

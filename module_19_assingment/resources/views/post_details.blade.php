@@ -8,6 +8,12 @@
     <h3>Comments</h3>
     <hr>
     <form action="{{route('add_comment')}}" method="POST">
+        @if (session('message'))
+            <script>
+                alert("{{ session('message') }}");
+            </script>
+        @endif
+
         @csrf
             <input type="hidden" name="post_id" value="{{$post->id}}">
             <div class="form-group">
