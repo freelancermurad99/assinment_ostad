@@ -7,4 +7,7 @@
             <p class="p-3">{{$post->desc}}</p>
         </div>
     @endforeach
+
+    <h3>Comments</h3>
+    <hr>
 @endsection
