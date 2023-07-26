@@ -2,21 +2,16 @@
 
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TodoController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['middleware' => 'api', 'prefix' => 'todos'], function () {
+    Route::post('/', [TodoController::class, 'store']);
+    Route::get('/', [TodoController::class, 'index']);
+    Route::get('/{id}', [TodoController::class, 'show']);
+    Route::post('update/{id}', [TodoController::class, 'update']);
+    Route::get('delete/{id}', [TodoController::class, 'destroy']);
 });
+
 
 
 Route::post('/user_reg', [UserController::class, 'user_reg']);
