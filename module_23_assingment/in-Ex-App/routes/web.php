@@ -27,6 +27,10 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/expense_add_store', [ExpenseController::class, 'expense_add_store'])->name('expense_add_store');
     Route::get('/expense_list', [ExpenseController::class, 'expense_list'])->name('expense');
     Route::get('/expense_del/{id}', [ExpenseController::class, 'expense_del'])->name('expense_del');
+
+    Route::get('/income_add', [IncomeController::class, 'income_add'])->name('income_add');
+    Route::post('/income_add_store', [IncomeController::class, 'income_add_store'])->name('income_add_store');
+    Route::get('/income_del/{id}', [IncomeController::class, 'income_del'])->name('income_del');
     Route::get('/income_list', [IncomeController::class, 'income_list'])->name('income');
 });
 
