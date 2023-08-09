@@ -50,6 +50,9 @@
                             @endif
                         @else
                             <li class="nav-item">
+                                <a class="nav-link" href="{{ route('home') }}">{{ __('Home') }}</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="{{ route('income') }}">{{ __('Income') }}</a>
                             </li>
                             <li class="nav-item">
