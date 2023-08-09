@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-11">
             <div class="card">
-                <div class="card-header">{{ __('Expense List') }} <a href="" class="btn btn-primary" style="float: right">Add Expense</a></div>
+                <div class="card-header">{{ __('Expense List') }} <a href="{{route('expense_add')}}" class="btn btn-primary" style="float: right">Add Expense</a></div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -20,6 +20,7 @@
                             <th scope="col">Amount</th>
                             <th scope="col">Description</th>
                             <th scope="col">Expense Date</th>
+                            <th scope="col">Action</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -27,7 +28,11 @@
                             <tr>
                                 <th scope="row">{{$item->amount}}</th>
                                 <td>{{$item->description}}</td>
-                                <td>{{$item->income_date}}</td>
+                                <td>{{$item->expense_date}}</td>
+                                <td>
+                                    <a href="edit/{{$item->id}}" class="btn btn-success">Edit</a>
+                                    <a href="{{route('expense_del', ['id'=>$item->id])}}" class="btn btn-danger">Delete</a>
+                                </td>
                             </tr>
                             @endforeach
                           
