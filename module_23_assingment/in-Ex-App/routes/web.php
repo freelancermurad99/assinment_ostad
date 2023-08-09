@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ExpenseController;
+use App\Http\Controllers\IncomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,7 +23,8 @@ Auth::routes();
 
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/abc', function(){return 11;})->name('expense');
+    Route::get('/expense_list', [ExpenseController::class, 'expense_list'])->name('expense');
+    Route::get('/income_list', [IncomeController::class, 'income_list'])->name('income');
 });
 
 

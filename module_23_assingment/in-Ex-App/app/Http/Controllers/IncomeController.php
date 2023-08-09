@@ -6,5 +6,7 @@ use Illuminate\Http\Request;
 
 class IncomeController extends Controller
 {
-    //
+    function income_list(){
+        
+    }
 }
