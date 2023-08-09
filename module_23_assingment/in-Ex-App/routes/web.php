@@ -23,6 +23,8 @@ Auth::routes();
 
 
 Route::middleware(['auth'])->group(function () {
+    Route::get('/expense_add', [ExpenseController::class, 'expense_add'])->name('expense_add');
+    Route::get('/expense_add_store', [ExpenseController::class, 'expense_add_store'])->name('expense_add_store');
     Route::get('/expense_list', [ExpenseController::class, 'expense_list'])->name('expense');
     Route::get('/income_list', [IncomeController::class, 'income_list'])->name('income');
 });
