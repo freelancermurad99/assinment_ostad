@@ -18,7 +18,7 @@
 
                         <div class="col-lg-3 p-2 m-2 card">
                             <div class="card-body">
-                                <h1 class="text-primary">100 TK</h1>
+                                <h1 class="text-primary">{{$total_income}} TK</h1>
                             </div>
                             <div class="card-footer">
                                 Total Income
@@ -28,7 +28,7 @@
                         <div class="col-lg-1"></div>
                         <div class="col-lg-3 p-2 m-2 card">
                             <div class="card-body">
-                                <h1 class="text-danger">50 TK</h1>
+                                <h1 class="text-danger">{{$total_expense}} TK</h1>
                             </div>
                             <div class="card-footer">
                                 Total Expense
@@ -38,7 +38,7 @@
                         <div class="col-lg-1"></div>
                         <div class="col-lg-3 p-2 m-2 card">
                             <div class="card-body">
-                                <h1 class="text-success">50 TK</h1>
+                                <h1 class="text-success">{{$total_income-$total_expense}} TK</h1>
                             </div>
                             <div class="card-footer">
                                 Net Income

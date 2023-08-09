@@ -23,7 +23,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        
-        return view('home');
+        $user = auth()->user();
+        $data['total_income'] = $user->incomes->sum('amount');
+        $data['total_expense'] = $user->expenses->sum('amount');
+        return view('home', $data);
     }
 }
