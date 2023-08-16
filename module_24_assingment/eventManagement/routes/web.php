@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EventController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,7 +23,9 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard', [EventController::class, 'dashboard'])->name('dashboard');
+
+    Route::get('event_list', [EventController::class, 'event_list'])->name('event_list');
+    Route::get('event_add', [EventController::class, 'event_add'])->name('event_add');
+    Route::post('event_add_store', [EventController::class, 'event_add_store'])->name('event_add_store');
 });

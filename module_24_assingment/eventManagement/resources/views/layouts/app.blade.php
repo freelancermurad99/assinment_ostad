@@ -16,6 +16,14 @@
 
         <!-- Styles -->
         @livewireStyles
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+        <style>
+            a{
+                text-decoration: none!important;
+            }
+        </style>
     </head>
     <body class="font-sans antialiased">
         <x-banner />
@@ -41,5 +49,11 @@
         @stack('modals')
 
         @livewireScripts
+
+        @if(Session::has('msg'))
+            <script>
+                alert("{{Session::get('msg')}}");
+            </script>
+        @endif
     </body>
 </html>
