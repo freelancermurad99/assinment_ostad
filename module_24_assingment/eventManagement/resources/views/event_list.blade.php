@@ -27,14 +27,18 @@
                                 <td>{{$item->location}}</td>
                                 <td>{{$item->date}}</td>
                                 <td>
-                                    <a href="" class="btn btn-success">Details</a>
-                                    <a href="" class="btn btn-primary">Edit</a>
-                                    <a href="" class="btn btn-danger">Delete</a>
+                                    <a href="{{route('event_details', ['id'=>$item->id])}}" class="btn btn-success">Details</a>
+                                    <a href="{{route('event_edit', ['id'=>$item->id])}}" class="btn btn-primary">Edit</a>
+                                    <a href="{{route('event_delete', ['id'=>$item->id])}}" class="btn btn-danger">Delete</a>
                                 </td>
                             </tr>
                         @endforeach
                     </tbody>
+                    
                   </table>
+                  <div class="paginate" class="p-5 m-5" style="padding: 20px!important;">
+                    {{$results->links()}}
+                  </div>
             </div>
         </div>
     </div>

@@ -15,7 +15,7 @@
                                 <span>Total Event</span>
                             </div>
                             <div class="card-body">
-                                <span>05</span>
+                                <span>{{$event_count}}</span>
                             </div>
                         </div>
                     </div>

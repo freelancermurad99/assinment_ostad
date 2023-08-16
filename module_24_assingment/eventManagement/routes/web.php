@@ -27,5 +27,9 @@ Route::middleware([
 
     Route::get('event_list', [EventController::class, 'event_list'])->name('event_list');
     Route::get('event_add', [EventController::class, 'event_add'])->name('event_add');
+    Route::get('event_edit/{id}', [EventController::class, 'event_edit'])->name('event_edit');
+    Route::get('event_delete/{id}', [EventController::class, 'event_delete'])->name('event_delete');
+    Route::get('event_details/{id}', [EventController::class, 'event_details'])->name('event_details');
     Route::post('event_add_store', [EventController::class, 'event_add_store'])->name('event_add_store');
+    Route::post('event_update', [EventController::class, 'event_update'])->name('event_update');
 });
